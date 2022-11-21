@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Locale: CaseIterable {
+extension Locale {
     public static let allCases: [Locale] = availableIdentifiers.map(Locale.init(identifier:))
 }
 

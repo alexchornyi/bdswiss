@@ -5,6 +5,13 @@
 //  Created by Oleksandr Chornyi on 17.11.2022.
 //
 
+import Charts
+import FlagKit
+import NVActivityIndicatorView
+import Reachability
+
+@testable import DBSWISS
+
 import XCTest
 
 final class DBSWISSUITests: XCTestCase {
@@ -12,6 +19,10 @@ final class DBSWISSUITests: XCTestCase {
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
+        // In UI tests it is usually best to stop immediately when a failure occurs.
+        // This dismisses system alerts.
+        XCUIDevice.shared.press(.home)
+        
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
 
@@ -37,5 +48,18 @@ final class DBSWISSUITests: XCTestCase {
                 XCUIApplication().launch()
             }
         }
+    }
+    
+    
+    // MARK: - Wait n seconds
+    func wait(timeInSeconds: Double) {
+        // Wait if app start first time we need open Preferences screen and then run tests
+        let expectation = XCTestExpectation(description: "Your expectation")
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + timeInSeconds) {
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: timeInSeconds + 1.0) // make sure it's more than what you used in AsyncAfter call.
     }
 }

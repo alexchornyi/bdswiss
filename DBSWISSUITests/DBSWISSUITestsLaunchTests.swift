@@ -4,6 +4,12 @@
 //
 //  Created by Oleksandr Chornyi on 17.11.2022.
 //
+import Charts
+import FlagKit
+import NVActivityIndicatorView
+import Reachability
+
+@testable import DBSWISS
 
 import XCTest
 

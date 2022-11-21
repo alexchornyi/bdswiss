@@ -6,6 +6,11 @@
 //
 
 import XCTest
+import Reachability
+import Charts
+import NVActivityIndicatorView
+import FlagKit
+
 @testable import DBSWISS
 
 final class DBSWISSTests: XCTestCase {

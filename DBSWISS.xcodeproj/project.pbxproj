@@ -82,6 +82,14 @@
 		5CE0F91E292AFD44005EFB7D /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0F91D292AFD44005EFB7D /* NotificationsManager.swift */; };
 		5CE0F91F292AFD44005EFB7D /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0F91D292AFD44005EFB7D /* NotificationsManager.swift */; };
 		5CE0F920292AFD44005EFB7D /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0F91D292AFD44005EFB7D /* NotificationsManager.swift */; };
+		5CF07F14292B9321002B02BD /* JAMTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF07F13292B9321002B02BD /* JAMTestHelper.swift */; };
+		5CF07F15292B9416002B02BD /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0F8F5292A8DB7005EFB7D /* DataManager.swift */; };
+		5CF07F16292B9416002B02BD /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0F8F5292A8DB7005EFB7D /* DataManager.swift */; };
+		5CF07F19292B9615002B02BD /* FlagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5CF07F18292B9615002B02BD /* FlagKit */; };
+		5CF07F1B292B9619002B02BD /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 5CF07F1A292B9619002B02BD /* Reachability */; };
+		5CF07F1D292B961D002B02BD /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 5CF07F1C292B961D002B02BD /* Charts */; };
+		5CF07F1F292B9624002B02BD /* SwiftEntryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5CF07F1E292B9624002B02BD /* SwiftEntryKit */; };
+		5CF07F21292B962C002B02BD /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 5CF07F20292B962C002B02BD /* NVActivityIndicatorView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +140,7 @@
 		5CE0F90C292AAECA005EFB7D /* Locale+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+.swift"; sourceTree = "<group>"; };
 		5CE0F913292ACD20005EFB7D /* ChartsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsDataManager.swift; sourceTree = "<group>"; };
 		5CE0F91D292AFD44005EFB7D /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
+		5CF07F13292B9321002B02BD /* JAMTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAMTestHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +167,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CF07F1F292B9624002B02BD /* SwiftEntryKit in Frameworks */,
+				5CF07F21292B962C002B02BD /* NVActivityIndicatorView in Frameworks */,
+				5CF07F19292B9615002B02BD /* FlagKit in Frameworks */,
+				5CF07F1D292B961D002B02BD /* Charts in Frameworks */,
+				5CF07F1B292B9619002B02BD /* Reachability in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +185,7 @@
 				5CD4B53429265363001516B9 /* DBSWISSTests */,
 				5CD4B53E29265363001516B9 /* DBSWISSUITests */,
 				5CD4B51C29265361001516B9 /* Products */,
+				5CF07F17292B9615002B02BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -205,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				5CD4B53F29265363001516B9 /* DBSWISSUITests.swift */,
+				5CF07F13292B9321002B02BD /* JAMTestHelper.swift */,
 				5CD4B54129265363001516B9 /* DBSWISSUITestsLaunchTests.swift */,
 			);
 			path = DBSWISSUITests;
@@ -360,6 +376,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		5CF07F17292B9615002B02BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -419,6 +442,13 @@
 				5CD4B53D29265363001516B9 /* PBXTargetDependency */,
 			);
 			name = DBSWISSUITests;
+			packageProductDependencies = (
+				5CF07F18292B9615002B02BD /* FlagKit */,
+				5CF07F1A292B9619002B02BD /* Reachability */,
+				5CF07F1C292B961D002B02BD /* Charts */,
+				5CF07F1E292B9624002B02BD /* SwiftEntryKit */,
+				5CF07F20292B962C002B02BD /* NVActivityIndicatorView */,
+			);
 			productName = DBSWISSUITests;
 			productReference = 5CD4B53B29265363001516B9 /* DBSWISSUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -556,6 +586,7 @@
 				5CE0F906292AAA3B005EFB7D /* Double+.swift in Sources */,
 				5CD9D169292A3967001BD769 /* RateModel.swift in Sources */,
 				5CD4B53629265363001516B9 /* DBSWISSTests.swift in Sources */,
+				5CF07F15292B9416002B02BD /* DataManager.swift in Sources */,
 				5CE0F91F292AFD44005EFB7D /* NotificationsManager.swift in Sources */,
 				5CD9D176292A45DF001BD769 /* Object+.swift in Sources */,
 				5CE0F8FB292A9981005EFB7D /* MainTVC.swift in Sources */,
@@ -573,9 +604,11 @@
 				5CE0F903292A9FD3005EFB7D /* UITableView+.swift in Sources */,
 				5CE0F916292ACD20005EFB7D /* ChartsDataManager.swift in Sources */,
 				5CE0F907292AAA3B005EFB7D /* Double+.swift in Sources */,
+				5CF07F14292B9321002B02BD /* JAMTestHelper.swift in Sources */,
 				5CD4B5A6292984F4001516B9 /* ConnectionObserver.swift in Sources */,
 				5CD4B5622926546F001516B9 /* MainVC.swift in Sources */,
 				5CD9D166292A3922001BD769 /* RatesModel.swift in Sources */,
+				5CF07F16292B9416002B02BD /* DataManager.swift in Sources */,
 				5CE0F920292AFD44005EFB7D /* NotificationsManager.swift in Sources */,
 				5CD4B54229265363001516B9 /* DBSWISSUITestsLaunchTests.swift in Sources */,
 				5CE0F90F292AAECA005EFB7D /* Locale+.swift in Sources */,
@@ -976,6 +1009,31 @@
 			productName = SwiftEntryKit;
 		};
 		5CE0F91B292AF8EB005EFB7D /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CE0F91A292AF8EB005EFB7D /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
+		5CF07F18292B9615002B02BD /* FlagKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CD9D16B292A3A5C001BD769 /* XCRemoteSwiftPackageReference "FlagKit" */;
+			productName = FlagKit;
+		};
+		5CF07F1A292B9619002B02BD /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CD9D17D292A53ED001BD769 /* XCRemoteSwiftPackageReference "Reachability" */;
+			productName = Reachability;
+		};
+		5CF07F1C292B961D002B02BD /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CE0F910292AC54E005EFB7D /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+		5CF07F1E292B9624002B02BD /* SwiftEntryKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CE0F917292AE0A8005EFB7D /* XCRemoteSwiftPackageReference "SwiftEntryKit" */;
+			productName = SwiftEntryKit;
+		};
+		5CF07F20292B962C002B02BD /* NVActivityIndicatorView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5CE0F91A292AF8EB005EFB7D /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorView;
