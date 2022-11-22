@@ -90,6 +90,9 @@
 		5CF07F1D292B961D002B02BD /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 5CF07F1C292B961D002B02BD /* Charts */; };
 		5CF07F1F292B9624002B02BD /* SwiftEntryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5CF07F1E292B9624002B02BD /* SwiftEntryKit */; };
 		5CF07F21292B962C002B02BD /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 5CF07F20292B962C002B02BD /* NVActivityIndicatorView */; };
+		5CF3B7D1292CE96B00D3831C /* rates_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 5CF3B7CF292CE96B00D3831C /* rates_json.json */; };
+		5CF3B7D2292CE96B00D3831C /* rate_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 5CF3B7D0292CE96B00D3831C /* rate_json.json */; };
+		5CF3B7D3292CF12E00D3831C /* JAMTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF07F13292B9321002B02BD /* JAMTestHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,12 +103,12 @@
 			remoteGlobalIDString = 5CD4B51A29265361001516B9;
 			remoteInfo = DBSWISS;
 		};
-		5CD4B53C29265363001516B9 /* PBXContainerItemProxy */ = {
+		5CF3B7C9292BAB1500D3831C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5CD4B51329265361001516B9 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5CD4B51A29265361001516B9;
-			remoteInfo = DBSWISS;
+			remoteInfo = BDSWISS;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -141,6 +144,8 @@
 		5CE0F913292ACD20005EFB7D /* ChartsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsDataManager.swift; sourceTree = "<group>"; };
 		5CE0F91D292AFD44005EFB7D /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		5CF07F13292B9321002B02BD /* JAMTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAMTestHelper.swift; sourceTree = "<group>"; };
+		5CF3B7CF292CE96B00D3831C /* rates_json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rates_json.json; sourceTree = "<group>"; };
+		5CF3B7D0292CE96B00D3831C /* rate_json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rate_json.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				5CD4B53529265363001516B9 /* BDSWISSTests.swift */,
+				5CF3B7D0292CE96B00D3831C /* rate_json.json */,
+				5CF3B7CF292CE96B00D3831C /* rates_json.json */,
 			);
 			path = BDSWISSTests;
 			sourceTree = "<group>";
@@ -439,7 +446,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				5CD4B53D29265363001516B9 /* PBXTargetDependency */,
+				5CF3B7CA292BAB1500D3831C /* PBXTargetDependency */,
 			);
 			name = BDSWISSUITests;
 			packageProductDependencies = (
@@ -523,8 +530,10 @@
 				5CD4B5702926546F001516B9 /* Main.storyboard in Resources */,
 				5CE0F8FE292A9981005EFB7D /* MainTVC.xib in Resources */,
 				5CD4B5732926546F001516B9 /* Assets.xcassets in Resources */,
+				5CF3B7D2292CE96B00D3831C /* rate_json.json in Resources */,
 				5CD9D17B292A4FE9001BD769 /* FontAwesome.otf in Resources */,
 				5CD4B56D2926546F001516B9 /* LaunchScreen.storyboard in Resources */,
+				5CF3B7D1292CE96B00D3831C /* rates_json.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +587,7 @@
 				5CD4B5A2292984F4001516B9 /* TimerObserver.swift in Sources */,
 				5CE0F90E292AAECA005EFB7D /* Locale+.swift in Sources */,
 				5CD4B5A5292984F4001516B9 /* ConnectionObserver.swift in Sources */,
+				5CF3B7D3292CF12E00D3831C /* JAMTestHelper.swift in Sources */,
 				5CD4B57F29297986001516B9 /* SplashVC.swift in Sources */,
 				5CD4B5612926546F001516B9 /* MainVC.swift in Sources */,
 				5CD9D165292A3922001BD769 /* RatesModel.swift in Sources */,
@@ -630,10 +640,10 @@
 			target = 5CD4B51A29265361001516B9 /* BDSWISS */;
 			targetProxy = 5CD4B53229265363001516B9 /* PBXContainerItemProxy */;
 		};
-		5CD4B53D29265363001516B9 /* PBXTargetDependency */ = {
+		5CF3B7CA292BAB1500D3831C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5CD4B51A29265361001516B9 /* BDSWISS */;
-			targetProxy = 5CD4B53C29265363001516B9 /* PBXContainerItemProxy */;
+			targetProxy = 5CF3B7C9292BAB1500D3831C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -873,6 +883,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9VT46A3UYH;
@@ -880,10 +891,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = rightandabove.com.DBSWISSUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DBSWISS;
+				TEST_TARGET_NAME = BDSWISS;
 			};
 			name = Debug;
 		};
@@ -891,6 +903,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9VT46A3UYH;
@@ -898,10 +911,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = rightandabove.com.DBSWISSUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DBSWISS;
+				TEST_TARGET_NAME = BDSWISS;
 			};
 			name = Release;
 		};

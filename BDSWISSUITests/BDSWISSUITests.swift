@@ -67,8 +67,21 @@ final class BDSWISSUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
-        wait(timeInSeconds: 2)
+        wait(timeInSeconds: 1)
+        let predicate = NSPredicate(format: "label BEGINSWITH 'Loading please wait...'")
+        let element = app.staticTexts.element(matching: predicate)
+        XCTAssert(element.exists)
         
+        XCTAssert(app.activityIndicators.firstMatch.exists)
+
+        wait(timeInSeconds: 3)
         
+        XCTAssert(app.tables.firstMatch.exists)
+        
+        XCTAssert(app.otherElements["LineChartView"].exists)
+        
+        if app.otherElements["LineChartView"].exists && app.otherElements["LineChartView"].isHittable {
+            XCTFail()
+        }
     }
 }
