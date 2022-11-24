@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C5B16B5292F9231000FF56D /* RxReachability in Frameworks */ = {isa = PBXBuildFile; productRef = 5C5B16B4292F9231000FF56D /* RxReachability */; };
+		5C5B16BE292FF73B000FF56D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B16BD292FF73B000FF56D /* APIClient.swift */; };
+		5C5B16BF292FF73B000FF56D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B16BD292FF73B000FF56D /* APIClient.swift */; };
+		5C5B16C0292FF73B000FF56D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B16BD292FF73B000FF56D /* APIClient.swift */; };
+		5C5B16C2292FF754000FF56D /* RatesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B16C1292FF754000FF56D /* RatesRequest.swift */; };
+		5C5B16C3292FF754000FF56D /* RatesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B16C1292FF754000FF56D /* RatesRequest.swift */; };
+		5C5B16C4292FF754000FF56D /* RatesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B16C1292FF754000FF56D /* RatesRequest.swift */; };
 		5CD4B53629265363001516B9 /* BDSWISSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B53529265363001516B9 /* BDSWISSTests.swift */; };
 		5CD4B54029265363001516B9 /* BDSWISSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B53F29265363001516B9 /* BDSWISSUITests.swift */; };
 		5CD4B54229265363001516B9 /* BDSWISSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B54129265363001516B9 /* BDSWISSUITestsLaunchTests.swift */; };
@@ -54,6 +61,8 @@
 		5CD9D17B292A4FE9001BD769 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5CD9D179292A4FE9001BD769 /* FontAwesome.otf */; };
 		5CD9D17C292A4FE9001BD769 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5CD9D179292A4FE9001BD769 /* FontAwesome.otf */; };
 		5CD9D17F292A53ED001BD769 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 5CD9D17E292A53ED001BD769 /* Reachability */; };
+		5CDFABB9292E3E1900541ABA /* SwiftUIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDFABB8292E3E1900541ABA /* SwiftUIView+.swift */; };
+		5CDFABBB292E3E5300541ABA /* MainUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDFABBA292E3E5300541ABA /* MainUIView.swift */; };
 		5CE0F8F6292A8DB7005EFB7D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0F8F5292A8DB7005EFB7D /* DataManager.swift */; };
 		5CE0F8FA292A9981005EFB7D /* MainTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0F8F8292A9981005EFB7D /* MainTVC.swift */; };
 		5CE0F8FB292A9981005EFB7D /* MainTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0F8F8292A9981005EFB7D /* MainTVC.swift */; };
@@ -93,6 +102,11 @@
 		5CF3B7D1292CE96B00D3831C /* rates_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 5CF3B7CF292CE96B00D3831C /* rates_json.json */; };
 		5CF3B7D2292CE96B00D3831C /* rate_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 5CF3B7D0292CE96B00D3831C /* rate_json.json */; };
 		5CF3B7D3292CF12E00D3831C /* JAMTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF07F13292B9321002B02BD /* JAMTestHelper.swift */; };
+		5CF3B7D6292E1D6800D3831C /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 5CF3B7D5292E1D6800D3831C /* RxBlocking */; };
+		5CF3B7D8292E1D6800D3831C /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5CF3B7D7292E1D6800D3831C /* RxCocoa */; };
+		5CF3B7DC292E1D6800D3831C /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5CF3B7DB292E1D6800D3831C /* RxSwift */; };
+		5CF3B7E0292E1F2D00D3831C /* SplashUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3B7DF292E1F2D00D3831C /* SplashUIView.swift */; };
+		5CF3B7E2292E2A5100D3831C /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3B7E1292E2A5100D3831C /* ActivityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +127,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C5B16BD292FF73B000FF56D /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		5C5B16C1292FF754000FF56D /* RatesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesRequest.swift; sourceTree = "<group>"; };
 		5CD4B51B29265361001516B9 /* BDSWISS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BDSWISS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD4B53129265363001516B9 /* BDSWISSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BDSWISSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD4B53529265363001516B9 /* BDSWISSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDSWISSTests.swift; sourceTree = "<group>"; };
@@ -134,6 +150,8 @@
 		5CD9D16F292A3BAD001BD769 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5CD9D174292A45DF001BD769 /* Object+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Object+.swift"; sourceTree = "<group>"; };
 		5CD9D179292A4FE9001BD769 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
+		5CDFABB8292E3E1900541ABA /* SwiftUIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUIView+.swift"; sourceTree = "<group>"; };
+		5CDFABBA292E3E5300541ABA /* MainUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUIView.swift; sourceTree = "<group>"; };
 		5CE0F8F5292A8DB7005EFB7D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		5CE0F8F8292A9981005EFB7D /* MainTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTVC.swift; sourceTree = "<group>"; };
 		5CE0F8F9292A9981005EFB7D /* MainTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTVC.xib; sourceTree = "<group>"; };
@@ -146,6 +164,8 @@
 		5CF07F13292B9321002B02BD /* JAMTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAMTestHelper.swift; sourceTree = "<group>"; };
 		5CF3B7CF292CE96B00D3831C /* rates_json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rates_json.json; sourceTree = "<group>"; };
 		5CF3B7D0292CE96B00D3831C /* rate_json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rate_json.json; sourceTree = "<group>"; };
+		5CF3B7DF292E1F2D00D3831C /* SplashUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashUIView.swift; sourceTree = "<group>"; };
+		5CF3B7E1292E2A5100D3831C /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,8 +173,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CF3B7DC292E1D6800D3831C /* RxSwift in Frameworks */,
 				5CE0F919292AE0A8005EFB7D /* SwiftEntryKit in Frameworks */,
+				5CF3B7D6292E1D6800D3831C /* RxBlocking in Frameworks */,
 				5CE0F91C292AF8EB005EFB7D /* NVActivityIndicatorView in Frameworks */,
+				5CF3B7D8292E1D6800D3831C /* RxCocoa in Frameworks */,
+				5C5B16B5292F9231000FF56D /* RxReachability in Frameworks */,
 				5CD9D16D292A3A5C001BD769 /* FlagKit in Frameworks */,
 				5CE0F912292AC54E005EFB7D /* Charts in Frameworks */,
 				5CD9D17F292A53ED001BD769 /* Reachability in Frameworks */,
@@ -183,6 +207,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C5B16B8292FF708000FF56D /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				5C5B16BD292FF73B000FF56D /* APIClient.swift */,
+				5C5B16C1292FF754000FF56D /* RatesRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		5CD4B51229265361001516B9 = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +269,7 @@
 		5CD4B54E2926546E001516B9 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				5C5B16B8292FF708000FF56D /* Request */,
 				5CD9D173292A45D1001BD769 /* Extensions */,
 				5CD9D16E292A3B52001BD769 /* Constants */,
 				5CD4B59F292984F4001516B9 /* Managers */,
@@ -260,6 +294,8 @@
 			isa = PBXGroup;
 			children = (
 				5CD4B57D29297986001516B9 /* SplashVC.swift */,
+				5CF3B7DF292E1F2D00D3831C /* SplashUIView.swift */,
+				5CF3B7E1292E2A5100D3831C /* ActivityView.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -269,6 +305,7 @@
 			children = (
 				5CE0F8F7292A995F005EFB7D /* Cell */,
 				5CD4B5522926546E001516B9 /* MainVC.swift */,
+				5CDFABBA292E3E5300541ABA /* MainUIView.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -362,6 +399,7 @@
 				5CE0F904292AAA3B005EFB7D /* Double+.swift */,
 				5CE0F908292AAD03005EFB7D /* String+.swift */,
 				5CE0F90C292AAECA005EFB7D /* Locale+.swift */,
+				5CDFABB8292E3E1900541ABA /* SwiftUIView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -412,6 +450,10 @@
 				5CE0F911292AC54E005EFB7D /* Charts */,
 				5CE0F918292AE0A8005EFB7D /* SwiftEntryKit */,
 				5CE0F91B292AF8EB005EFB7D /* NVActivityIndicatorView */,
+				5CF3B7D5292E1D6800D3831C /* RxBlocking */,
+				5CF3B7D7292E1D6800D3831C /* RxCocoa */,
+				5CF3B7DB292E1D6800D3831C /* RxSwift */,
+				5C5B16B4292F9231000FF56D /* RxReachability */,
 			);
 			productName = DBSWISS;
 			productReference = 5CD4B51B29265361001516B9 /* BDSWISS.app */;
@@ -498,6 +540,8 @@
 				5CE0F910292AC54E005EFB7D /* XCRemoteSwiftPackageReference "Charts" */,
 				5CE0F917292AE0A8005EFB7D /* XCRemoteSwiftPackageReference "SwiftEntryKit" */,
 				5CE0F91A292AF8EB005EFB7D /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				5CF3B7D4292E1D6800D3831C /* XCRemoteSwiftPackageReference "RxSwift" */,
+				5C5B16B3292F9231000FF56D /* XCRemoteSwiftPackageReference "RxReachability" */,
 			);
 			productRefGroup = 5CD4B51C29265361001516B9 /* Products */;
 			projectDirPath = "";
@@ -561,17 +605,23 @@
 				5CE0F8F6292A8DB7005EFB7D /* DataManager.swift in Sources */,
 				5CD9D168292A3967001BD769 /* RateModel.swift in Sources */,
 				5CE0F90D292AAECA005EFB7D /* Locale+.swift in Sources */,
+				5CDFABBB292E3E5300541ABA /* MainUIView.swift in Sources */,
 				5CD4B5602926546F001516B9 /* MainVC.swift in Sources */,
+				5CDFABB9292E3E1900541ABA /* SwiftUIView+.swift in Sources */,
 				5CD9D164292A3922001BD769 /* RatesModel.swift in Sources */,
 				5CD9D170292A3BAD001BD769 /* Constants.swift in Sources */,
 				5CD4B57E29297986001516B9 /* SplashVC.swift in Sources */,
+				5C5B16BE292FF73B000FF56D /* APIClient.swift in Sources */,
 				5CE0F909292AAD03005EFB7D /* String+.swift in Sources */,
+				5C5B16C2292FF754000FF56D /* RatesRequest.swift in Sources */,
 				5CE0F901292A9FD3005EFB7D /* UITableView+.swift in Sources */,
 				5CE0F905292AAA3B005EFB7D /* Double+.swift in Sources */,
 				5CD4B5632926546F001516B9 /* AppDelegate.swift in Sources */,
+				5CF3B7E2292E2A5100D3831C /* ActivityView.swift in Sources */,
 				5CD9D175292A45DF001BD769 /* Object+.swift in Sources */,
 				5CE0F91E292AFD44005EFB7D /* NotificationsManager.swift in Sources */,
 				5CD4B5662926546F001516B9 /* SceneDelegate.swift in Sources */,
+				5CF3B7E0292E1F2D00D3831C /* SplashUIView.swift in Sources */,
 				5CE0F8FA292A9981005EFB7D /* MainTVC.swift in Sources */,
 				5CD4B5A1292984F4001516B9 /* TimerObserver.swift in Sources */,
 			);
@@ -589,8 +639,10 @@
 				5CD4B5A5292984F4001516B9 /* ConnectionObserver.swift in Sources */,
 				5CF3B7D3292CF12E00D3831C /* JAMTestHelper.swift in Sources */,
 				5CD4B57F29297986001516B9 /* SplashVC.swift in Sources */,
+				5C5B16BF292FF73B000FF56D /* APIClient.swift in Sources */,
 				5CD4B5612926546F001516B9 /* MainVC.swift in Sources */,
 				5CD9D165292A3922001BD769 /* RatesModel.swift in Sources */,
+				5C5B16C3292FF754000FF56D /* RatesRequest.swift in Sources */,
 				5CE0F90A292AAD03005EFB7D /* String+.swift in Sources */,
 				5CE0F902292A9FD3005EFB7D /* UITableView+.swift in Sources */,
 				5CE0F906292AAA3B005EFB7D /* Double+.swift in Sources */,
@@ -608,11 +660,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C5B16C4292FF754000FF56D /* RatesRequest.swift in Sources */,
 				5CD4B5682926546F001516B9 /* SceneDelegate.swift in Sources */,
 				5CD4B5652926546F001516B9 /* AppDelegate.swift in Sources */,
 				5CE0F8FC292A9981005EFB7D /* MainTVC.swift in Sources */,
 				5CE0F903292A9FD3005EFB7D /* UITableView+.swift in Sources */,
 				5CE0F916292ACD20005EFB7D /* ChartsDataManager.swift in Sources */,
+				5C5B16C0292FF73B000FF56D /* APIClient.swift in Sources */,
 				5CE0F907292AAA3B005EFB7D /* Double+.swift in Sources */,
 				5CF07F14292B9321002B02BD /* JAMTestHelper.swift in Sources */,
 				5CD4B5A6292984F4001516B9 /* ConnectionObserver.swift in Sources */,
@@ -793,7 +847,7 @@
 				INFOPLIST_FILE = BDSWISS/resources/Plist/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -822,7 +876,7 @@
 				INFOPLIST_FILE = BDSWISS/resources/Plist/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -961,6 +1015,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5C5B16B3292F9231000FF56D /* XCRemoteSwiftPackageReference "RxReachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxReachability";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		5CD9D16B292A3A5C001BD769 /* XCRemoteSwiftPackageReference "FlagKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/madebybowtie/FlagKit.git";
@@ -1001,9 +1063,22 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		5CF3B7D4292E1D6800D3831C /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5C5B16B4292F9231000FF56D /* RxReachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C5B16B3292F9231000FF56D /* XCRemoteSwiftPackageReference "RxReachability" */;
+			productName = RxReachability;
+		};
 		5CD9D16C292A3A5C001BD769 /* FlagKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5CD9D16B292A3A5C001BD769 /* XCRemoteSwiftPackageReference "FlagKit" */;
@@ -1053,6 +1128,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5CE0F91A292AF8EB005EFB7D /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorView;
+		};
+		5CF3B7D5292E1D6800D3831C /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CF3B7D4292E1D6800D3831C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		5CF3B7D7292E1D6800D3831C /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CF3B7D4292E1D6800D3831C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		5CF3B7DB292E1D6800D3831C /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CF3B7D4292E1D6800D3831C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -7,6 +7,8 @@
 
 import UIKit
 import Reachability
+import RxReachability
+import RxSwift
 
 protocol ConnectionObserverProtocol: AnyObject {
     func connectionDidChanged(state: Bool)
@@ -18,33 +20,47 @@ class ConnectionObserver {
     private var observers = NSHashTable<AnyObject>.weakObjects()
     //private var timer
     
+    let disposeBag = DisposeBag()
+    
     // MARK: - Shared manager
     static let sharedInstance = ConnectionObserver()
-    private let reachability = try! Reachability()
+    private let reachability = try? Reachability()
     private var isReachable = false
     
     init() {
         applicationDidBecomeActive()
-        reachability.whenReachable = { [weak self] reachability in
-            if !(self?.isReachable ?? true) {
-                self?.isReachable = true
-                self?.notifyConnectionDidChange()
-            }
-            print("Reachable")
-        }
-        reachability.whenUnreachable = { [weak self] _ in
-            if self?.isReachable ?? false {
-                self?.isReachable = false
-                self?.notifyConnectionDidChange()
-            }
-            print("Not reachable")
-        }
-        switch reachability.connection {
+        
+        reachability?.rx.reachabilityChanged
+            .subscribe(onNext: { [weak self] _ in
+                
+                switch self?.reachability?.connection {
+                case .wifi:
+                    if !(self?.isReachable ?? true) {
+                        self?.isReachable = true
+                        self?.notifyConnectionDidChange()
+                    }
+                case .cellular:
+                    if !(self?.isReachable ?? true) {
+                        self?.isReachable = true
+                        self?.notifyConnectionDidChange()
+                    }
+                case .unavailable, .none:
+                    if self?.isReachable ?? false {
+                        self?.isReachable = false
+                        self?.notifyConnectionDidChange()
+                    }
+                }
+            })
+              .disposed(by: disposeBag)
+        
+        switch reachability?.connection {
         case .wifi:
             isReachable = true
         case .cellular:
             isReachable = true
         case .unavailable:
+            isReachable = false
+        case .none:
             isReachable = false
         }
         NotificationCenter.default.addObserver(self,
@@ -59,14 +75,14 @@ class ConnectionObserver {
     
     @objc private func applicationDidBecomeActive() {
         do {
-            try reachability.startNotifier()
+            try reachability?.startNotifier()
         } catch {
             print("Unable to start notifier")
         }
     }
 
     @objc private func applicationDidEnterForegraund() {
-        reachability.stopNotifier()
+        reachability?.stopNotifier()
     }
 
     // MARK: Observers

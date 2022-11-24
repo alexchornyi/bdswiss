@@ -67,7 +67,7 @@ class ChartsDataManager {
 extension ChartsDataManager: DataManagerProtocol {
     
     func dataDidFinishLoad() {
-        DataManager.sharedInstance.getItems()?.forEach({ rate in
+        DataManager.sharedInstance.getItems().forEach({ rate in
             if let chartElement = chartsElements.first(where: {$0.code == rate.symbol}) {
                 chartElement.addValue(rate: rate)
             } else {

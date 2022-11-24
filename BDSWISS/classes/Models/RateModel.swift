@@ -8,7 +8,8 @@
 import UIKit
 import FlagKit
 
-class Rate: Decodable {
+class Rate: Codable, Identifiable {
+    var id = UUID()
     let symbol: String?
     var price: Double = 0.0
     var date = Date()
@@ -25,7 +26,7 @@ class Rate: Decodable {
         getImageFor(currency: symbol?.last(char: 3) ?? "USD")
     }
     
-    enum CodingKeys: CodingKey {
+    private enum CodingKeys: CodingKey {
         case symbol
         case price
     }

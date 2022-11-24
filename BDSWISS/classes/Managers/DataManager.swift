@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol DataManagerProtocol: AnyObject {
     func dataDidFinishLoad()
     func dataDidFailWith(error: Error)
 }
 
-class DataManager {
+class DataManager: ObservableObject {
     
     // MARK: - Shared manager
     static let sharedInstance = DataManager()
@@ -20,37 +21,29 @@ class DataManager {
     private var items: Rates?
     private var oldItems: Rates?
     
+    @Published var rates = [Rate]()
+    @Published var oldRates = [Rate]()
+    
+    private let apiClient = APIClient()
+    private let disposeBag = DisposeBag()
+    
     func fetchData() {
-        
-        guard let url = URL(string: serverURL) else { return }
-        
-        URLSession.shared.dataTask(with: url) { [weak self] data, response, err in
-            guard let data = data, err == nil else {
-                if let error = err {
-                    DispatchQueue.main.async { [weak self] in
-                        self?.notifyDataDidFailLoad(error: error)
-                    }
-                }
-                return
-            }
-            
-            do {
-                if let items = self?.items {
-                    self?.oldItems = items
-                }
-                self?.items = try JSONDecoder().decode(Rates.self, from: data)
-                
-                DispatchQueue.main.async { [weak self] in
-                    self?.notifyDataDidFinishLoad()
-                }
-                
-            } catch let jsonErr {
-                print("failed to decode json:", jsonErr)
-                DispatchQueue.main.async { [weak self] in
-                    self?.notifyDataDidFailLoad(error: jsonErr)
+        apiClient.send(apiRequest: RatesRequest()).subscribe(onNext: { rate in
+            if let items = self.items {
+                self.oldItems = items
+                if let oldRates = items.rates {
+                    self.oldRates = oldRates
                 }
             }
-        }.resume()
+            self.items = rate
+            self.rates = self.items?.rates ?? []
+            self.notifyDataDidFinishLoad()
+        }, onError: { error in
+            DispatchQueue.main.async { [weak self] in
+               self?.notifyDataDidFailLoad(error: error)
+           }
+       })
+        .disposed(by: disposeBag)
     }
     
     // MARK: Observers
@@ -95,7 +88,7 @@ class DataManager {
         oldItems?.rates?.first(where: { $0.symbol == code})
     }
     
-    func getItems() -> [Rate]? {
-        items?.rates
+    func getItems() -> [Rate] {
+        items?.rates ?? []
     }
 }

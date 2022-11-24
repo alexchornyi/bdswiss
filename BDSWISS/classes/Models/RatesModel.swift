@@ -7,11 +7,11 @@
 
 import Foundation
 
-class Rates: Decodable {
+class Rates: Codable {
     let rates: [Rate]?
     var date: Date = Date()
     
-    enum CodingKeys: CodingKey {
+    private enum CodingKeys: CodingKey {
         case rates
     }
     
