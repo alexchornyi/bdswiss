@@ -54,7 +54,7 @@ struct MainUIView: View {
 extension MainUIView {
     // MARK: - TimerObserverProtocol -
     
-    final class Configuration:  NSObject, TimerObserverProtocol {
+    final class Configuration:  NSObject, TimerObserverProtocol, DataManagerProtocol {
         
         var mainView: MainUIView?
         
@@ -67,14 +67,22 @@ extension MainUIView {
         
         func add() {
             TimerObserver.sharedInstance.addObserver(self)
+            DataManager.sharedInstance.addObserver(self)
         }
         
         func remove() {
-            TimerObserver.sharedInstance.removeObserver(self)
+            TimerObserver.sharedInstance.addObserver(self)
+            DataManager.sharedInstance.addObserver(self)
         }
         
         func timerDidFire() {
             DataManager.sharedInstance.fetchData()
+        }
+        
+        func dataDidFinishLoad() { }
+        
+        func dataDidFailWith(error: Error) {
+            NotificationsManager.shared.show(error: error)
         }
     }
 }
@@ -237,7 +245,7 @@ extension ConnectionView {
         }
         
         func needReloadData() {
-            
+            DataManager.sharedInstance.fetchData()
         }
         
     }
