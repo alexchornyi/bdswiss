@@ -17,9 +17,6 @@
 		5CD4B53629265363001516B9 /* BDSWISSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B53529265363001516B9 /* BDSWISSTests.swift */; };
 		5CD4B54029265363001516B9 /* BDSWISSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B53F29265363001516B9 /* BDSWISSUITests.swift */; };
 		5CD4B54229265363001516B9 /* BDSWISSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B54129265363001516B9 /* BDSWISSUITestsLaunchTests.swift */; };
-		5CD4B5602926546F001516B9 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B5522926546E001516B9 /* MainVC.swift */; };
-		5CD4B5612926546F001516B9 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B5522926546E001516B9 /* MainVC.swift */; };
-		5CD4B5622926546F001516B9 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B5522926546E001516B9 /* MainVC.swift */; };
 		5CD4B5632926546F001516B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B5542926546E001516B9 /* AppDelegate.swift */; };
 		5CD4B5642926546F001516B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B5542926546E001516B9 /* AppDelegate.swift */; };
 		5CD4B5652926546F001516B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B5542926546E001516B9 /* AppDelegate.swift */; };
@@ -35,9 +32,6 @@
 		5CD4B5722926546F001516B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CD4B55F2926546E001516B9 /* Assets.xcassets */; };
 		5CD4B5732926546F001516B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CD4B55F2926546E001516B9 /* Assets.xcassets */; };
 		5CD4B5742926546F001516B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CD4B55F2926546E001516B9 /* Assets.xcassets */; };
-		5CD4B57E29297986001516B9 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B57D29297986001516B9 /* SplashVC.swift */; };
-		5CD4B57F29297986001516B9 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B57D29297986001516B9 /* SplashVC.swift */; };
-		5CD4B58029297986001516B9 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B57D29297986001516B9 /* SplashVC.swift */; };
 		5CD4B5A1292984F4001516B9 /* TimerObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B59D292984F4001516B9 /* TimerObserver.swift */; };
 		5CD4B5A2292984F4001516B9 /* TimerObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B59D292984F4001516B9 /* TimerObserver.swift */; };
 		5CD4B5A3292984F4001516B9 /* TimerObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B59D292984F4001516B9 /* TimerObserver.swift */; };
@@ -64,12 +58,6 @@
 		5CDFABB9292E3E1900541ABA /* SwiftUIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDFABB8292E3E1900541ABA /* SwiftUIView+.swift */; };
 		5CDFABBB292E3E5300541ABA /* MainUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDFABBA292E3E5300541ABA /* MainUIView.swift */; };
 		5CE0F8F6292A8DB7005EFB7D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0F8F5292A8DB7005EFB7D /* DataManager.swift */; };
-		5CE0F8FA292A9981005EFB7D /* MainTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0F8F8292A9981005EFB7D /* MainTVC.swift */; };
-		5CE0F8FB292A9981005EFB7D /* MainTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0F8F8292A9981005EFB7D /* MainTVC.swift */; };
-		5CE0F8FC292A9981005EFB7D /* MainTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0F8F8292A9981005EFB7D /* MainTVC.swift */; };
-		5CE0F8FD292A9981005EFB7D /* MainTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE0F8F9292A9981005EFB7D /* MainTVC.xib */; };
-		5CE0F8FE292A9981005EFB7D /* MainTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE0F8F9292A9981005EFB7D /* MainTVC.xib */; };
-		5CE0F8FF292A9981005EFB7D /* MainTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE0F8F9292A9981005EFB7D /* MainTVC.xib */; };
 		5CE0F901292A9FD3005EFB7D /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0F900292A9FD3005EFB7D /* UITableView+.swift */; };
 		5CE0F902292A9FD3005EFB7D /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0F900292A9FD3005EFB7D /* UITableView+.swift */; };
 		5CE0F903292A9FD3005EFB7D /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0F900292A9FD3005EFB7D /* UITableView+.swift */; };
@@ -135,14 +123,12 @@
 		5CD4B53B29265363001516B9 /* BDSWISSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BDSWISSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD4B53F29265363001516B9 /* BDSWISSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDSWISSUITests.swift; sourceTree = "<group>"; };
 		5CD4B54129265363001516B9 /* BDSWISSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDSWISSUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		5CD4B5522926546E001516B9 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		5CD4B5542926546E001516B9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CD4B5552926546E001516B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5CD4B5582926546E001516B9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CD4B55B2926546E001516B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5CD4B55D2926546E001516B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5CD4B55F2926546E001516B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5CD4B57D29297986001516B9 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		5CD4B59D292984F4001516B9 /* TimerObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerObserver.swift; sourceTree = "<group>"; };
 		5CD4B59E292984F4001516B9 /* ConnectionObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionObserver.swift; sourceTree = "<group>"; };
 		5CD9D163292A3922001BD769 /* RatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesModel.swift; sourceTree = "<group>"; };
@@ -153,8 +139,6 @@
 		5CDFABB8292E3E1900541ABA /* SwiftUIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUIView+.swift"; sourceTree = "<group>"; };
 		5CDFABBA292E3E5300541ABA /* MainUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUIView.swift; sourceTree = "<group>"; };
 		5CE0F8F5292A8DB7005EFB7D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		5CE0F8F8292A9981005EFB7D /* MainTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTVC.swift; sourceTree = "<group>"; };
-		5CE0F8F9292A9981005EFB7D /* MainTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTVC.xib; sourceTree = "<group>"; };
 		5CE0F900292A9FD3005EFB7D /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		5CE0F904292AAA3B005EFB7D /* Double+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+.swift"; sourceTree = "<group>"; };
 		5CE0F908292AAD03005EFB7D /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
@@ -293,7 +277,6 @@
 		5CD4B5502926546E001516B9 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				5CD4B57D29297986001516B9 /* SplashVC.swift */,
 				5CF3B7DF292E1F2D00D3831C /* SplashUIView.swift */,
 				5CF3B7E1292E2A5100D3831C /* ActivityView.swift */,
 			);
@@ -303,8 +286,6 @@
 		5CD4B5512926546E001516B9 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				5CE0F8F7292A995F005EFB7D /* Cell */,
-				5CD4B5522926546E001516B9 /* MainVC.swift */,
 				5CDFABBA292E3E5300541ABA /* MainUIView.swift */,
 			);
 			path = MainScreen;
@@ -410,15 +391,6 @@
 				5CD9D179292A4FE9001BD769 /* FontAwesome.otf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		5CE0F8F7292A995F005EFB7D /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				5CE0F8F8292A9981005EFB7D /* MainTVC.swift */,
-				5CE0F8F9292A9981005EFB7D /* MainTVC.xib */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		5CF07F17292B9615002B02BD /* Frameworks */ = {
@@ -560,7 +532,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CD4B56F2926546F001516B9 /* Main.storyboard in Resources */,
-				5CE0F8FD292A9981005EFB7D /* MainTVC.xib in Resources */,
 				5CD4B5722926546F001516B9 /* Assets.xcassets in Resources */,
 				5CD9D17A292A4FE9001BD769 /* FontAwesome.otf in Resources */,
 				5CD4B56C2926546F001516B9 /* LaunchScreen.storyboard in Resources */,
@@ -572,7 +543,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CD4B5702926546F001516B9 /* Main.storyboard in Resources */,
-				5CE0F8FE292A9981005EFB7D /* MainTVC.xib in Resources */,
 				5CD4B5732926546F001516B9 /* Assets.xcassets in Resources */,
 				5CF3B7D2292CE96B00D3831C /* rate_json.json in Resources */,
 				5CD9D17B292A4FE9001BD769 /* FontAwesome.otf in Resources */,
@@ -586,7 +556,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CD4B5712926546F001516B9 /* Main.storyboard in Resources */,
-				5CE0F8FF292A9981005EFB7D /* MainTVC.xib in Resources */,
 				5CD4B5742926546F001516B9 /* Assets.xcassets in Resources */,
 				5CD9D17C292A4FE9001BD769 /* FontAwesome.otf in Resources */,
 				5CD4B56E2926546F001516B9 /* LaunchScreen.storyboard in Resources */,
@@ -606,11 +575,9 @@
 				5CD9D168292A3967001BD769 /* RateModel.swift in Sources */,
 				5CE0F90D292AAECA005EFB7D /* Locale+.swift in Sources */,
 				5CDFABBB292E3E5300541ABA /* MainUIView.swift in Sources */,
-				5CD4B5602926546F001516B9 /* MainVC.swift in Sources */,
 				5CDFABB9292E3E1900541ABA /* SwiftUIView+.swift in Sources */,
 				5CD9D164292A3922001BD769 /* RatesModel.swift in Sources */,
 				5CD9D170292A3BAD001BD769 /* Constants.swift in Sources */,
-				5CD4B57E29297986001516B9 /* SplashVC.swift in Sources */,
 				5C5B16BE292FF73B000FF56D /* APIClient.swift in Sources */,
 				5CE0F909292AAD03005EFB7D /* String+.swift in Sources */,
 				5C5B16C2292FF754000FF56D /* RatesRequest.swift in Sources */,
@@ -622,7 +589,6 @@
 				5CE0F91E292AFD44005EFB7D /* NotificationsManager.swift in Sources */,
 				5CD4B5662926546F001516B9 /* SceneDelegate.swift in Sources */,
 				5CF3B7E0292E1F2D00D3831C /* SplashUIView.swift in Sources */,
-				5CE0F8FA292A9981005EFB7D /* MainTVC.swift in Sources */,
 				5CD4B5A1292984F4001516B9 /* TimerObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -638,9 +604,7 @@
 				5CE0F90E292AAECA005EFB7D /* Locale+.swift in Sources */,
 				5CD4B5A5292984F4001516B9 /* ConnectionObserver.swift in Sources */,
 				5CF3B7D3292CF12E00D3831C /* JAMTestHelper.swift in Sources */,
-				5CD4B57F29297986001516B9 /* SplashVC.swift in Sources */,
 				5C5B16BF292FF73B000FF56D /* APIClient.swift in Sources */,
-				5CD4B5612926546F001516B9 /* MainVC.swift in Sources */,
 				5CD9D165292A3922001BD769 /* RatesModel.swift in Sources */,
 				5C5B16C3292FF754000FF56D /* RatesRequest.swift in Sources */,
 				5CE0F90A292AAD03005EFB7D /* String+.swift in Sources */,
@@ -651,7 +615,6 @@
 				5CF07F15292B9416002B02BD /* DataManager.swift in Sources */,
 				5CE0F91F292AFD44005EFB7D /* NotificationsManager.swift in Sources */,
 				5CD9D176292A45DF001BD769 /* Object+.swift in Sources */,
-				5CE0F8FB292A9981005EFB7D /* MainTVC.swift in Sources */,
 				5CD4B5672926546F001516B9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -663,14 +626,12 @@
 				5C5B16C4292FF754000FF56D /* RatesRequest.swift in Sources */,
 				5CD4B5682926546F001516B9 /* SceneDelegate.swift in Sources */,
 				5CD4B5652926546F001516B9 /* AppDelegate.swift in Sources */,
-				5CE0F8FC292A9981005EFB7D /* MainTVC.swift in Sources */,
 				5CE0F903292A9FD3005EFB7D /* UITableView+.swift in Sources */,
 				5CE0F916292ACD20005EFB7D /* ChartsDataManager.swift in Sources */,
 				5C5B16C0292FF73B000FF56D /* APIClient.swift in Sources */,
 				5CE0F907292AAA3B005EFB7D /* Double+.swift in Sources */,
 				5CF07F14292B9321002B02BD /* JAMTestHelper.swift in Sources */,
 				5CD4B5A6292984F4001516B9 /* ConnectionObserver.swift in Sources */,
-				5CD4B5622926546F001516B9 /* MainVC.swift in Sources */,
 				5CD9D166292A3922001BD769 /* RatesModel.swift in Sources */,
 				5CF07F16292B9416002B02BD /* DataManager.swift in Sources */,
 				5CE0F920292AFD44005EFB7D /* NotificationsManager.swift in Sources */,
@@ -681,7 +642,6 @@
 				5CD4B54029265363001516B9 /* BDSWISSUITests.swift in Sources */,
 				5CD9D177292A45DF001BD769 /* Object+.swift in Sources */,
 				5CD9D16A292A3967001BD769 /* RateModel.swift in Sources */,
-				5CD4B58029297986001516B9 /* SplashVC.swift in Sources */,
 				5CD9D172292A3BAD001BD769 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
