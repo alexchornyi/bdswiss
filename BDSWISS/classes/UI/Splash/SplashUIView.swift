@@ -19,11 +19,11 @@ struct SplashUIView: View {
                 HStack() {
                     Spacer()
                     Image("logo")
-                                        .resizable()
-                                        .aspectRatio(CGSizeMake(204, 55), contentMode: .fill)
-                                        .padding(3)
-                                        .frame(maxWidth: 204, maxHeight: 55, alignment: .center)
-                                        .foregroundColor(Color.clear)
+                        .resizable()
+                        .aspectRatio(CGSizeMake(204, 55), contentMode: .fill)
+                        .padding(3)
+                        .frame(maxWidth: 204, maxHeight: 55, alignment: .center)
+                        .foregroundColor(Color.clear)
                     Spacer()
                 }
                 Spacer()
@@ -38,7 +38,7 @@ struct SplashUIView: View {
                 .background(Color.clear)
                 HStack(alignment: .bottom) {
                     Text("Loading please wait...")
-                        .font(.system(size: 14))
+                        .font(textFont)
                         .padding(.bottom, 16.0)
                     
                 }
@@ -49,26 +49,26 @@ struct SplashUIView: View {
         }
         .edgesIgnoringSafeArea(.all)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
-            .background(Color.clear)
-            .edgesIgnoringSafeArea(.all)
-            .navigate(to: MainUIView(), when: $willMoveToNextScreen)
-            .navigationBarHidden(true)
-            .onReceive(timer) { time in
-                timer.upstream.connect().cancel()
-                willMoveToNextScreen = true
-            }
-            .onAppear {
-                DataManager.sharedInstance.fetchData()
-            }
+        .background(Color.clear)
+        .edgesIgnoringSafeArea(.all)
+        .navigate(to: MainUIView(), when: $willMoveToNextScreen)
+        .navigationBarHidden(true)
+        .onReceive(timer) { time in
+            timer.upstream.connect().cancel()
+            willMoveToNextScreen = true
+        }
+        .onAppear {
+            DataManager.sharedInstance.fetchData()
+        }
     }
 }
 
 class ChildHostingController: UIHostingController<SplashUIView> {
-
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder, rootView: SplashUIView());
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

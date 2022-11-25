@@ -10,6 +10,11 @@ import Charts
 
 struct MainUIView: View {
     
+    private enum Constants {
+        static let space = 16.0
+        static let maxHeight = 200.0
+    }
+    
     let chartsView = LineChartView()
     
     @State var configuration: Configuration?
@@ -19,13 +24,13 @@ struct MainUIView: View {
     var body: some View {
         NavigationView {
             ZStack(alignment: .center) {
-                VStack(alignment: .leading, spacing: 16) {
+                VStack(alignment: .leading, spacing: Constants.space) {
                     List(dataManager.rates) { rate in
                         MainCell(rate: rate)
                     }
                     .background(Color.red)
                     ChartsView()
-                        .frame(maxWidth: .infinity ,maxHeight: 200, alignment: .bottomTrailing)
+                        .frame(maxWidth: .infinity ,maxHeight: Constants.maxHeight, alignment: .bottomTrailing)
                         .background(Color.clear)
                 }
                 .navigationBarTitleDisplayMode(.inline)
@@ -89,6 +94,13 @@ extension MainUIView {
 
 struct MainCell: View {
 
+    private enum Constants {
+        static let size = 40.0
+        static let space = 16.0
+        static let text = 20.0
+        static let textWidth = 100.0
+    }
+    
     let rate: Rate
     @State var color = 2;
     @State var iconText: String = iconUpDown
@@ -99,28 +111,28 @@ struct MainCell: View {
             Image(uiImage: rate.firstFlag)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(minWidth: 40, maxWidth: 40, minHeight: 40, maxHeight: 40)
+                .frame(minWidth: Constants.size, maxWidth: Constants.size, minHeight: Constants.size, maxHeight: Constants.size)
             Spacer()
-                .frame(width: 16)
+                .frame(width: Constants.space)
             Text(iconNext)
                 .font(fontAwesome)
-                .frame(width: 20.0, alignment: .center)
+                .frame(width: Constants.text, alignment: .center)
             Spacer()
-                .frame(width: 16)
+                .frame(width: Constants.space)
             Image(uiImage: rate.secondFlag)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(minWidth: 40, maxWidth: 40, minHeight: 40, maxHeight: 40)
+                .frame(minWidth: Constants.size, maxWidth: Constants.size, minHeight: Constants.size, maxHeight: Constants.size)
             Spacer()
-                .frame(width: 16)
+                .frame(width: Constants.space)
             Text(rate.priceName)
                 .foregroundColor(changeColor(color: color))
                 .font(textFont)
-                .frame(minWidth: 100, maxWidth: .infinity, alignment: .trailing)
+                .frame(minWidth: Constants.textWidth, maxWidth: .infinity, alignment: .trailing)
             Text(iconText)
                 .foregroundColor(changeColor(color: color))
                 .font(fontAwesome)
-                .frame(width: 20.0, alignment: .trailing)
+                .frame(width: Constants.text, alignment: .trailing)
         }
         .onAppear {
             checkRate()
@@ -176,23 +188,29 @@ struct ConnectionView: View {
         case offline = "ofline"
     }
     
+    private enum Constants {
+        static let width = 50.0
+        static let space = 4.0
+        static let stackHeight = 40.0
+    }
+    
     @State var color = 0;
     @State var connectionText: String = Status.online.rawValue
     
     @State var configuration: Configuration?
     
     var body: some View {
-        return VStack(alignment: .leading, spacing: 4) {
+        return VStack(alignment: .leading, spacing: Constants.space) {
             Text(iconConnection)
-                .frame(width: 50, height: 20)
+                .frame(width: Constants.width, height: 20)
                 .foregroundColor(changeBkColor(color : self.color))
-                .font(Font.custom("FontAwesome6Free-Solid", size: 20))
+                .font(fontAwesome)
             Text(connectionText)
-                .frame(width: 50, height: 16)
+                .frame(width: Constants.width, height: 16)
                 .foregroundColor(changeBkColor(color : self.color))
-                .font(Font.system(size: 14))
+                .font(textFont)
         }
-        .frame(width: 50, height: 40)
+        .frame(width: Constants.width, height: Constants.stackHeight)
         .onAppear {
             configuration = Configuration(connectionView: self)
         }
