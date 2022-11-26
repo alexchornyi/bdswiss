@@ -58,7 +58,7 @@ struct SplashUIView: View {
             willMoveToNextScreen = true
         }
         .onAppear {
-            DataManager.sharedInstance.fetchData()
+            DataManager.shared.fetchData()
         }
     }
 }

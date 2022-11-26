@@ -9,24 +9,21 @@ import UIKit
 import Reachability
 import RxReachability
 import RxSwift
-
-protocol ConnectionObserverProtocol: AnyObject {
-    func connectionDidChanged(state: Bool)
-    func needReloadData()
-}
+import RxRelay
 
 class ConnectionObserver {
     
-    private var observers = NSHashTable<AnyObject>.weakObjects()
-    //private var timer
-    
-    let disposeBag = DisposeBag()
-    
     // MARK: - Shared manager
-    static let sharedInstance = ConnectionObserver()
+    static let shared = ConnectionObserver()
+    
+    // MARK: - Private -
     private let reachability = try? Reachability()
     private var isReachable = false
-    
+    private let disposeBag = DisposeBag()
+
+    // MARK: - Public -
+    public var connectionDidChanged = PublishRelay<(Bool)>()
+
     init() {
         applicationDidBecomeActive()
         
@@ -37,17 +34,17 @@ class ConnectionObserver {
                 case .wifi:
                     if !(self?.isReachable ?? true) {
                         self?.isReachable = true
-                        self?.notifyConnectionDidChange()
+                        self?.connectionDidChanged.accept((self?.isReachable ?? false))
                     }
                 case .cellular:
                     if !(self?.isReachable ?? true) {
                         self?.isReachable = true
-                        self?.notifyConnectionDidChange()
+                        self?.connectionDidChanged.accept((self?.isReachable ?? false))
                     }
                 case .unavailable, .none:
                     if self?.isReachable ?? false {
                         self?.isReachable = false
-                        self?.notifyConnectionDidChange()
+                        self?.connectionDidChanged.accept((self?.isReachable ?? false))
                     }
                 }
             })
@@ -83,36 +80,6 @@ class ConnectionObserver {
 
     @objc private func applicationDidEnterForegraund() {
         reachability?.stopNotifier()
-    }
-
-    // MARK: Observers
-    func addObserver(_ observer: ConnectionObserverProtocol) {
-        if !observers.contains(observer) {
-            observers.add(observer)
-        }
-    }
-    
-    func removeObserver(_ observer: ConnectionObserverProtocol) {
-        guard observers.contains(observer) else {
-            return
-        }
-        observers.remove(observer)
-    }
-    
-    func notifyConnectionDidChange() {
-        observers.allObjects.forEach { observer in
-            DispatchQueue.main.async { [weak self] in
-                (observer as? ConnectionObserverProtocol)?.connectionDidChanged(state: self?.isReachable ?? false)
-            }
-        }
-    }
-
-    func notifyNeedUpdate() {
-        observers.allObjects.forEach { observer in
-            DispatchQueue.main.async { [weak self] in
-                (observer as? ConnectionObserverProtocol)?.needReloadData()
-            }
-        }
     }
 
     func getReachableState() -> Bool {

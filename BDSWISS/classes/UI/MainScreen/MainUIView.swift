@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Charts
+import RxSwift
 
 struct MainUIView: View {
     
@@ -17,9 +18,8 @@ struct MainUIView: View {
     
     let chartsView = LineChartView()
     
-    @State var configuration: Configuration?
-    
-    @ObservedObject var dataManager = DataManager.sharedInstance
+    @ObservedObject var dataManager = DataManager.shared
+    private let disposeBag = DisposeBag()
     
     var body: some View {
         NavigationView {
@@ -47,131 +47,29 @@ struct MainUIView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .onAppear {
-            configuration = Configuration(mainView: self)
-            DataManager.sharedInstance.fetchData()
+            subscribeObservable()
+            DataManager.shared.fetchData()
         }
-        .onDisappear {
-            configuration?.remove()
-        }
+    }
+    
+    func subscribeObservable() {
+        DataManager.shared
+            .dataDidFailWith
+            .asObservable()
+            .subscribe(onNext: { (error) in
+                NotificationsManager.shared.show(error: error)
+            })
+            .disposed(by: disposeBag)
+        
+        TimerObserver.shared
+            .timerDidFire
+            .asObservable()
+            .subscribe(onNext: { _ in
+                DataManager.shared.fetchData()
+            })
+            .disposed(by: disposeBag)
     }
 }
-
-extension MainUIView {
-    // MARK: - TimerObserverProtocol -
-    
-    final class Configuration:  NSObject, TimerObserverProtocol, DataManagerProtocol {
-        
-        var mainView: MainUIView?
-        
-        init(mainView: MainUIView?) {
-            self.mainView = mainView
-            
-            super.init()
-            add()
-        }
-        
-        func add() {
-            TimerObserver.sharedInstance.addObserver(self)
-            DataManager.sharedInstance.addObserver(self)
-        }
-        
-        func remove() {
-            TimerObserver.sharedInstance.addObserver(self)
-            DataManager.sharedInstance.addObserver(self)
-        }
-        
-        func timerDidFire() {
-            DataManager.sharedInstance.fetchData()
-        }
-        
-        func dataDidFinishLoad() { }
-        
-        func dataDidFailWith(error: Error) {
-            NotificationsManager.shared.show(error: error)
-        }
-    }
-}
-
-struct MainCell: View {
-
-    private enum Constants {
-        static let size = 40.0
-        static let space = 16.0
-        static let text = 20.0
-        static let textWidth = 100.0
-    }
-    
-    let rate: Rate
-    @State var color = 2;
-    @State var iconText: String = iconUpDown
-
-    
-    var body: some View {
-        HStack {
-            Image(uiImage: rate.firstFlag)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(minWidth: Constants.size, maxWidth: Constants.size, minHeight: Constants.size, maxHeight: Constants.size)
-            Spacer()
-                .frame(width: Constants.space)
-            Text(iconNext)
-                .font(fontAwesome)
-                .frame(width: Constants.text, alignment: .center)
-            Spacer()
-                .frame(width: Constants.space)
-            Image(uiImage: rate.secondFlag)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(minWidth: Constants.size, maxWidth: Constants.size, minHeight: Constants.size, maxHeight: Constants.size)
-            Spacer()
-                .frame(width: Constants.space)
-            Text(rate.priceName)
-                .foregroundColor(changeColor(color: color))
-                .font(textFont)
-                .frame(minWidth: Constants.textWidth, maxWidth: .infinity, alignment: .trailing)
-            Text(iconText)
-                .foregroundColor(changeColor(color: color))
-                .font(fontAwesome)
-                .frame(width: Constants.text, alignment: .trailing)
-        }
-        .onAppear {
-            checkRate()
-        }
-    }
-    
-    func checkRate() {
-        guard let symbol = rate.symbol, let oldValue = DataManager.sharedInstance.getOldRateFor(code: symbol) else {
-            color = 2
-            iconText = iconUpDown
-            return
-        }
-        if rate.price > oldValue.price {
-            color = 0
-            iconText = iconUp
-        }
-        if rate.price < oldValue.price {
-            color = 1
-            iconText = iconDown
-        }
-        if rate.price == oldValue.price {
-            color = 2
-            iconText = iconUpDown
-        }
-    }
-    
-    func changeColor(color: Int) -> Color
-    {
-        switch color {
-        case 0:
-            return Color.green
-        case 1:
-            return Color.red
-        default:
-            return Color.black
-        }
-    }
-}
-
 
 #if DEBUG
 struct MainUIView_Previews: PreviewProvider {
@@ -180,136 +78,3 @@ struct MainUIView_Previews: PreviewProvider {
     }
 }
 #endif
-
-struct ConnectionView: View {
-    
-    enum Status: String {
-        case online = "online"
-        case offline = "ofline"
-    }
-    
-    private enum Constants {
-        static let width = 50.0
-        static let space = 4.0
-        static let stackHeight = 40.0
-    }
-    
-    @State var color = 0;
-    @State var connectionText: String = Status.online.rawValue
-    
-    @State var configuration: Configuration?
-    
-    var body: some View {
-        return VStack(alignment: .leading, spacing: Constants.space) {
-            Text(iconConnection)
-                .frame(width: Constants.width, height: 20)
-                .foregroundColor(changeBkColor(color : self.color))
-                .font(fontAwesome)
-            Text(connectionText)
-                .frame(width: Constants.width, height: 16)
-                .foregroundColor(changeBkColor(color : self.color))
-                .font(textFont)
-        }
-        .frame(width: Constants.width, height: Constants.stackHeight)
-        .onAppear {
-            configuration = Configuration(connectionView: self)
-        }
-        .onDisappear {
-            configuration?.remove()
-        }
-    }
-    
-    func changeBkColor(color: Int) -> Color
-    {
-        if(color == 0) {
-            return Color.green;
-        } else  {
-            return Color.red
-        }
-    }
-    
-}
-
-extension ConnectionView {
-    // MARK: - ConnectionObserver -
-    
-    final class Configuration:  NSObject, ConnectionObserverProtocol {
-        
-        var connectionView: ConnectionView?
-        
-        init(connectionView: ConnectionView? = nil) {
-            self.connectionView = connectionView
-            
-            super.init()
-            add()
-        }
-        
-        func add() {
-            ConnectionObserver.sharedInstance.addObserver(self)
-        }
-        
-        func remove() {
-            ConnectionObserver.sharedInstance.removeObserver(self)
-        }
-        
-        func connectionDidChanged(state: Bool) {
-            if state {
-                connectionView?.color = 0
-                connectionView?.connectionText = Status.online.rawValue
-            } else {
-                connectionView?.color = 1
-                connectionView?.connectionText = Status.offline.rawValue
-            }
-        }
-        
-        func needReloadData() {
-            DataManager.sharedInstance.fetchData()
-        }
-        
-    }
-}
-
-
-struct ChartsView: UIViewRepresentable {
-    
-    @State var lineChartsView: LineChartView = LineChartView()
-    
-    func makeCoordinator() -> ChartsViewCoordinator {
-        ChartsViewCoordinator(chartsView: self)
-    }
-    
-    func makeUIView(context: Context) -> LineChartView {
-        lineChartsView.backgroundColor = .clear
-        lineChartsView.delegate = context.coordinator
-        lineChartsView.rightAxis.enabled = false
-        lineChartsView.chartDescription.enabled = false
-        lineChartsView.xAxis.enabled = false
-        lineChartsView.data = ChartsDataManager.shared.getChartsData()
-        ChartsDataManager.shared.addObserver(context.coordinator)
-        return lineChartsView
-    }
-    
-    func updateUIView(_ activityIndicator: LineChartView, context: Context) {
-    }
-    
-    
-    // MARK: - ChartsViewDelegate -
-    public class ChartsViewCoordinator: NSObject, ChartViewDelegate, ChartsDataManagerProtocol {
-        
-        var chartsView: ChartsView?
-        
-        init(chartsView: ChartsView? = nil) {
-            self.chartsView = chartsView
-        }
-        
-        func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-            NotificationsManager.shared.show(message: "\(entry.y.rounded(toPlaces: 4))")
-            print(entry)
-        }
-        
-        func dataDidUpdated(chartData: LineChartData) {
-            chartsView?.lineChartsView.clear()
-            chartsView?.lineChartsView.data = chartData
-        }
-    }
-}

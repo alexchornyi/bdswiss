@@ -7,48 +7,34 @@
 
 import UIKit
 import Charts
-
-protocol ChartsDataManagerProtocol: AnyObject {
-    func dataDidUpdated(chartData: LineChartData)
-}
+import RxSwift
+import RxRelay
 
 class ChartsDataManager {
     
-    private var observers = NSHashTable<AnyObject>.weakObjects()
+    // MARK: - Private -
     private var chartsElements: [ChartDataElement] = [ChartDataElement]()
+    private let disposeBag = DisposeBag()
+    
+    // MARK: - Public -
+    public var dataDidUpdated = PublishRelay<(LineChartData)>()
     
     // MARK: - Shared manager
     static let shared = ChartsDataManager()
-  
+    
     init() {
-        DataManager.sharedInstance.addObserver(self)
+        subscribeObservable()
     }
     
-    // MARK: Observers
-    func addObserver(_ observer: ChartsDataManagerProtocol) {
-        if !observers.contains(observer) {
-            observers.add(observer)
-        }
-    }
-
-    func removeObserver(_ observer: ChartsDataManagerProtocol) {
-        guard observers.contains(observer) else {
-            return
-        }
-        observers.remove(observer)
-    }
-    
-    @objc func notifyTimerDidFire() {
-        observers.allObjects.forEach { observer in
-            DispatchQueue.main.async { [weak self] in
-                var chartDataSets: [ChartDataSetProtocol] = [ChartDataSetProtocol]()
-                self?.chartsElements.forEach { chartDataElement in
-                    chartDataSets.append(chartDataElement.chartSet!)
-                }
-                let data = LineChartData(dataSets: chartDataSets)
-                data.setDrawValues(false)
-                (observer as? ChartsDataManagerProtocol)?.dataDidUpdated(chartData: data)
+    func notifyDataDidChanged() {
+        DispatchQueue.main.async { [weak self] in
+            var chartDataSets: [ChartDataSetProtocol] = [ChartDataSetProtocol]()
+            self?.chartsElements.forEach { chartDataElement in
+                chartDataSets.append(chartDataElement.chartSet!)
             }
+            let data = LineChartData(dataSets: chartDataSets)
+            data.setDrawValues(false)
+            self?.dataDidUpdated.accept((data))
         }
     }
     
@@ -61,25 +47,25 @@ class ChartsDataManager {
         data.setDrawValues(false)
         return data
     }
-}
-
-// MARK: - Data Manager Protocol -
-extension ChartsDataManager: DataManagerProtocol {
     
-    func dataDidFinishLoad() {
-        DataManager.sharedInstance.getItems().forEach({ rate in
-            if let chartElement = chartsElements.first(where: {$0.code == rate.symbol}) {
-                chartElement.addValue(rate: rate)
-            } else {
-                let newElement = ChartDataElement()
-                newElement.addValue(rate: rate)
-                chartsElements.append(newElement)
-            }
-        })
-        notifyTimerDidFire()
+    func subscribeObservable() {
+        DataManager.shared
+            .dataDidFinishLoad
+            .asObservable()
+            .subscribe(onNext: { [unowned self] (rates) in
+                rates.forEach({ rate in
+                    if let chartElement = chartsElements.first(where: {$0.code == rate.symbol}) {
+                        chartElement.addValue(rate: rate)
+                    } else {
+                        let newElement = ChartDataElement()
+                        newElement.addValue(rate: rate)
+                        chartsElements.append(newElement)
+                    }
+                })
+                notifyDataDidChanged()
+            })
+            .disposed(by: disposeBag)
     }
-    
-    func dataDidFailWith(error: Error) { }
 }
 
 class ChartDataElement {
@@ -88,19 +74,19 @@ class ChartDataElement {
     var chartSet: LineChartDataSet?
     
     var colors: [UIColor] =
-        [
-            UIColor.red,
-            UIColor.systemBlue,
-            UIColor.systemPink,
-            UIColor.systemCyan,
-            UIColor.systemMint,
-            UIColor.systemOrange,
-            UIColor.systemPurple,
-            UIColor.systemYellow,
-            UIColor.systemTeal,
-            UIColor.black,
-            UIColor.darkGray
-        ]
+    [
+        UIColor.red,
+        UIColor.systemBlue,
+        UIColor.systemPink,
+        UIColor.systemCyan,
+        UIColor.systemMint,
+        UIColor.systemOrange,
+        UIColor.systemPurple,
+        UIColor.systemYellow,
+        UIColor.systemTeal,
+        UIColor.black,
+        UIColor.darkGray
+    ]
     
     var color: UIColor?
     

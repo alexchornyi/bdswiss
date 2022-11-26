@@ -14,6 +14,15 @@
 		5C5B16C2292FF754000FF56D /* RatesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B16C1292FF754000FF56D /* RatesRequest.swift */; };
 		5C5B16C3292FF754000FF56D /* RatesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B16C1292FF754000FF56D /* RatesRequest.swift */; };
 		5C5B16C4292FF754000FF56D /* RatesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B16C1292FF754000FF56D /* RatesRequest.swift */; };
+		5C5B16C6293138F3000FF56D /* MainCellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B16C5293138F3000FF56D /* MainCellUIView.swift */; };
+		5C5B16C7293138F3000FF56D /* MainCellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B16C5293138F3000FF56D /* MainCellUIView.swift */; };
+		5C5B16C8293138F3000FF56D /* MainCellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B16C5293138F3000FF56D /* MainCellUIView.swift */; };
+		5C5B16CA29313942000FF56D /* ConnectionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B16C929313942000FF56D /* ConnectionUIView.swift */; };
+		5C5B16CB29313942000FF56D /* ConnectionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B16C929313942000FF56D /* ConnectionUIView.swift */; };
+		5C5B16CC29313942000FF56D /* ConnectionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B16C929313942000FF56D /* ConnectionUIView.swift */; };
+		5C5B16CE29313965000FF56D /* ChartsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B16CD29313965000FF56D /* ChartsUIView.swift */; };
+		5C5B16CF29313965000FF56D /* ChartsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B16CD29313965000FF56D /* ChartsUIView.swift */; };
+		5C5B16D029313965000FF56D /* ChartsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B16CD29313965000FF56D /* ChartsUIView.swift */; };
 		5CD4B53629265363001516B9 /* BDSWISSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B53529265363001516B9 /* BDSWISSTests.swift */; };
 		5CD4B54029265363001516B9 /* BDSWISSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B53F29265363001516B9 /* BDSWISSUITests.swift */; };
 		5CD4B54229265363001516B9 /* BDSWISSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B54129265363001516B9 /* BDSWISSUITestsLaunchTests.swift */; };
@@ -117,6 +126,9 @@
 /* Begin PBXFileReference section */
 		5C5B16BD292FF73B000FF56D /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		5C5B16C1292FF754000FF56D /* RatesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesRequest.swift; sourceTree = "<group>"; };
+		5C5B16C5293138F3000FF56D /* MainCellUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCellUIView.swift; sourceTree = "<group>"; };
+		5C5B16C929313942000FF56D /* ConnectionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionUIView.swift; sourceTree = "<group>"; };
+		5C5B16CD29313965000FF56D /* ChartsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsUIView.swift; sourceTree = "<group>"; };
 		5CD4B51B29265361001516B9 /* BDSWISS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BDSWISS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD4B53129265363001516B9 /* BDSWISSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BDSWISSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD4B53529265363001516B9 /* BDSWISSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDSWISSTests.swift; sourceTree = "<group>"; };
@@ -287,6 +299,9 @@
 			isa = PBXGroup;
 			children = (
 				5CDFABBA292E3E5300541ABA /* MainUIView.swift */,
+				5C5B16CD29313965000FF56D /* ChartsUIView.swift */,
+				5C5B16C5293138F3000FF56D /* MainCellUIView.swift */,
+				5C5B16C929313942000FF56D /* ConnectionUIView.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -578,6 +593,9 @@
 				5CDFABB9292E3E1900541ABA /* SwiftUIView+.swift in Sources */,
 				5CD9D164292A3922001BD769 /* RatesModel.swift in Sources */,
 				5CD9D170292A3BAD001BD769 /* Constants.swift in Sources */,
+				5C5B16CA29313942000FF56D /* ConnectionUIView.swift in Sources */,
+				5C5B16C6293138F3000FF56D /* MainCellUIView.swift in Sources */,
+				5C5B16CE29313965000FF56D /* ChartsUIView.swift in Sources */,
 				5C5B16BE292FF73B000FF56D /* APIClient.swift in Sources */,
 				5CE0F909292AAD03005EFB7D /* String+.swift in Sources */,
 				5C5B16C2292FF754000FF56D /* RatesRequest.swift in Sources */,
@@ -602,10 +620,12 @@
 				5CD9D171292A3BAD001BD769 /* Constants.swift in Sources */,
 				5CD4B5A2292984F4001516B9 /* TimerObserver.swift in Sources */,
 				5CE0F90E292AAECA005EFB7D /* Locale+.swift in Sources */,
+				5C5B16C7293138F3000FF56D /* MainCellUIView.swift in Sources */,
 				5CD4B5A5292984F4001516B9 /* ConnectionObserver.swift in Sources */,
 				5CF3B7D3292CF12E00D3831C /* JAMTestHelper.swift in Sources */,
 				5C5B16BF292FF73B000FF56D /* APIClient.swift in Sources */,
 				5CD9D165292A3922001BD769 /* RatesModel.swift in Sources */,
+				5C5B16CB29313942000FF56D /* ConnectionUIView.swift in Sources */,
 				5C5B16C3292FF754000FF56D /* RatesRequest.swift in Sources */,
 				5CE0F90A292AAD03005EFB7D /* String+.swift in Sources */,
 				5CE0F902292A9FD3005EFB7D /* UITableView+.swift in Sources */,
@@ -616,6 +636,7 @@
 				5CE0F91F292AFD44005EFB7D /* NotificationsManager.swift in Sources */,
 				5CD9D176292A45DF001BD769 /* Object+.swift in Sources */,
 				5CD4B5672926546F001516B9 /* SceneDelegate.swift in Sources */,
+				5C5B16CF29313965000FF56D /* ChartsUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,14 +646,17 @@
 			files = (
 				5C5B16C4292FF754000FF56D /* RatesRequest.swift in Sources */,
 				5CD4B5682926546F001516B9 /* SceneDelegate.swift in Sources */,
+				5C5B16CC29313942000FF56D /* ConnectionUIView.swift in Sources */,
 				5CD4B5652926546F001516B9 /* AppDelegate.swift in Sources */,
 				5CE0F903292A9FD3005EFB7D /* UITableView+.swift in Sources */,
+				5C5B16D029313965000FF56D /* ChartsUIView.swift in Sources */,
 				5CE0F916292ACD20005EFB7D /* ChartsDataManager.swift in Sources */,
 				5C5B16C0292FF73B000FF56D /* APIClient.swift in Sources */,
 				5CE0F907292AAA3B005EFB7D /* Double+.swift in Sources */,
 				5CF07F14292B9321002B02BD /* JAMTestHelper.swift in Sources */,
 				5CD4B5A6292984F4001516B9 /* ConnectionObserver.swift in Sources */,
 				5CD9D166292A3922001BD769 /* RatesModel.swift in Sources */,
+				5C5B16C8293138F3000FF56D /* MainCellUIView.swift in Sources */,
 				5CF07F16292B9416002B02BD /* DataManager.swift in Sources */,
 				5CE0F920292AFD44005EFB7D /* NotificationsManager.swift in Sources */,
 				5CD4B54229265363001516B9 /* BDSWISSUITestsLaunchTests.swift in Sources */,

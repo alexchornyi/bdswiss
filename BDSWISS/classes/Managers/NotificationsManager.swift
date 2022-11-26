@@ -20,7 +20,7 @@ class NotificationsManager {
     
     // MARK: - Shared manager
     static let shared = NotificationsManager()
-
+    
     func show(message: String) {
         DispatchQueue.main.async {
             // Generate top floating entry and set some properties
@@ -35,7 +35,7 @@ class NotificationsManager {
             let description = EKProperty.LabelContent(text: message, style: .init(font: Constants.systemFont12, color: .white))
             let simpleMessage = EKSimpleMessage(image: nil, title: title, description: description)
             let notificationMessage = EKNotificationMessage(simpleMessage: simpleMessage)
-
+            
             let contentView = EKNotificationMessageView(with: notificationMessage)
             SwiftEntryKit.display(entry: contentView, using: attributes)
         }
@@ -50,12 +50,12 @@ class NotificationsManager {
         attributes.displayDuration = Constants.duration
         attributes.entryInteraction = .dismiss
         attributes.screenInteraction = .dismiss
-
+        
         let title = EKProperty.LabelContent(text: Constants.errorText, style: .init(font: Constants.systemFont16, color: EKColor(red: 1, green: 0, blue: 0)))
         let description = EKProperty.LabelContent(text: error.localizedDescription, style: .init(font: Constants.systemFont12, color: .white))
         let simpleMessage = EKSimpleMessage(image: nil, title: title, description: description)
         let notificationMessage = EKNotificationMessage(simpleMessage: simpleMessage)
-
+        
         let contentView = EKNotificationMessageView(with: notificationMessage)
         SwiftEntryKit.display(entry: contentView, using: attributes)
     }

@@ -6,18 +6,18 @@
 //
 
 import UIKit
-
-protocol TimerObserverProtocol: AnyObject {
-    func timerDidFire()
-}
+import RxSwift
+import RxRelay
 
 class TimerObserver {
     
-    private var observers = NSHashTable<AnyObject>.weakObjects()
     private var timer: Timer?
     
     // MARK: - Shared manager
-    static let sharedInstance = TimerObserver()
+    static let shared = TimerObserver()
+    
+    // MARK: Public
+    public var timerDidFire = PublishRelay<()>()
   
     init() {
         applicationDidBecomeActive()
@@ -34,34 +34,13 @@ class TimerObserver {
     @objc private func applicationDidBecomeActive() {
         if timer == nil {
             timer = Timer.scheduledTimer(withTimeInterval: timeInSec, repeats: true) { [weak self] _ in
-                self?.notifyTimerDidFire()
+                self?.timerDidFire.accept(())
             }
         }
     }
 
     @objc private func applicationDidEnterForegraund() {
         timer?.invalidate()
-    }
-
-    // MARK: Observers
-    func addObserver(_ observer: TimerObserverProtocol) {
-        if !observers.contains(observer) {
-            observers.add(observer)
-        }
-    }
-
-    func removeObserver(_ observer: TimerObserverProtocol) {
-        guard observers.contains(observer) else {
-            return
-        }
-        observers.remove(observer)
-    }
-    
-    @objc func notifyTimerDidFire() {
-        observers.allObjects.forEach { observer in
-            DispatchQueue.main.async {
-                (observer as? TimerObserverProtocol)?.timerDidFire()
-            }
-        }
+        timer = nil
     }
 }

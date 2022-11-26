@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let _ = ConnectionObserver.sharedInstance
+        let _ = ConnectionObserver.shared
         // For Degug and show list of fonts
         // showListOfFonts()
         return true
