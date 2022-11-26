@@ -10,5 +10,4 @@ import Foundation
 class RatesRequest: APIRequest {
     var method = RequestType.GET
     var path = Path.rates.rawValue
- 
 }
