@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxCocoaRuntime
 
 extension NSObject {
     

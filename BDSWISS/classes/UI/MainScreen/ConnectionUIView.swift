@@ -19,20 +19,22 @@ struct ConnectionView: View {
         static let width = 50.0
         static let space = 4.0
         static let stackHeight = 40.0
+        static let iconHeight = 20.0
+        static let textHeight = 16.0
     }
     private let disposeBag = DisposeBag()
 
-    @State var color = 0;
+    @State var color = Colors.green.rawValue;
     @State var connectionText: String = Status.online.rawValue
     
     var body: some View {
         return VStack(alignment: .leading, spacing: Constants.space) {
             Text(iconConnection)
-                .frame(width: Constants.width, height: 20)
+                .frame(width: Constants.width, height: Constants.iconHeight)
                 .foregroundColor(changeBkColor(color : self.color))
                 .font(fontAwesome)
             Text(connectionText)
-                .frame(width: Constants.width, height: 16)
+                .frame(width: Constants.width, height: Constants.textHeight)
                 .foregroundColor(changeBkColor(color : self.color))
                 .font(textFont)
         }
@@ -44,7 +46,7 @@ struct ConnectionView: View {
     
     func changeBkColor(color: Int) -> Color
     {
-        if(color == 0) {
+        if(color == Colors.green.rawValue) {
             return Color.green;
         } else  {
             return Color.red
@@ -57,10 +59,10 @@ struct ConnectionView: View {
             .asObservable()
             .subscribe(onNext: { state in
                 if state {
-                    color = 0
+                    color = Colors.green.rawValue
                     connectionText = Status.online.rawValue
                 } else {
-                    color = 1
+                    color = Colors.red.rawValue
                     connectionText = Status.offline.rawValue
                 }
             })

@@ -8,6 +8,10 @@ import Charts
 import FlagKit
 import NVActivityIndicatorView
 import Reachability
+import RxCocoaRuntime
+import RxSwift
+import RxCocoa
+import RxReachability
 
 @testable import BDSWISS
 

@@ -28,6 +28,8 @@ struct MainUIView: View {
                     List(dataManager.rates) { rate in
                         MainCell(rate: rate)
                     }
+                    .accessibilityLabel("List")
+                    .accessibilityIdentifier("List")
                     .background(Color.red)
                     ChartsView()
                         .frame(maxWidth: .infinity ,maxHeight: Constants.maxHeight, alignment: .bottomTrailing)

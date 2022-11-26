@@ -9,7 +9,16 @@ import SwiftUI
 
 struct SplashUIView: View {
     
-    let timer = Timer.publish(every: 2.5, on: .main, in: .common).autoconnect()
+    private enum Constants {
+        static let timeDelay = 2.5
+        static let imageWidth = 204.0
+        static let imageHeight = 55.0
+        static let textHeight = 16.0
+        static let textMaxHeight = 40.0
+    }
+    
+    let timer = Timer.publish(every: Constants.timeDelay, on: .main, in: .common).autoconnect()
+    
     @State private var willMoveToNextScreen = false
     
     var body: some View {
@@ -20,9 +29,9 @@ struct SplashUIView: View {
                     Spacer()
                     Image("logo")
                         .resizable()
-                        .aspectRatio(CGSizeMake(204, 55), contentMode: .fill)
+                        .aspectRatio(CGSizeMake(Constants.imageWidth, Constants.imageHeight), contentMode: .fill)
                         .padding(3)
-                        .frame(maxWidth: 204, maxHeight: 55, alignment: .center)
+                        .frame(maxWidth: Constants.imageWidth, maxHeight: Constants.imageHeight, alignment: .center)
                         .foregroundColor(Color.clear)
                     Spacer()
                 }
@@ -34,15 +43,15 @@ struct SplashUIView: View {
                         $0.hidesWhenStopped = true
                     }
                 }
-                .frame(maxWidth: .infinity, maxHeight: 40.0, alignment: .center)
+                .frame(maxWidth: .infinity, maxHeight: Constants.textMaxHeight, alignment: .center)
                 .background(Color.clear)
                 HStack(alignment: .bottom) {
-                    Text("Loading please wait...")
+                    Text(textLoading)
                         .font(textFont)
-                        .padding(.bottom, 16.0)
+                        .padding(.bottom, Constants.textHeight)
                     
                 }
-                .frame(maxWidth: .infinity, maxHeight: 16.0, alignment: .center)
+                .frame(maxWidth: .infinity, maxHeight: Constants.textHeight, alignment: .center)
                 .background(Color.clear)
                 .padding(.bottom)
             }

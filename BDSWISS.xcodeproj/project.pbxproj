@@ -23,6 +23,17 @@
 		5C5B16CE29313965000FF56D /* ChartsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B16CD29313965000FF56D /* ChartsUIView.swift */; };
 		5C5B16CF29313965000FF56D /* ChartsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B16CD29313965000FF56D /* ChartsUIView.swift */; };
 		5C5B16D029313965000FF56D /* ChartsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B16CD29313965000FF56D /* ChartsUIView.swift */; };
+		5C5B16D2293228D2000FF56D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5C5B16D1293228D2000FF56D /* RxCocoa */; };
+		5C5B16D4293228F7000FF56D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5C5B16D3293228F7000FF56D /* RxSwift */; };
+		5C5B16D629322906000FF56D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5C5B16D529322906000FF56D /* RxSwift */; };
+		5C5B16D82932290A000FF56D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5C5B16D72932290A000FF56D /* RxCocoa */; };
+		5C5B16DA29322A1A000FF56D /* RxReachability in Frameworks */ = {isa = PBXBuildFile; productRef = 5C5B16D929322A1A000FF56D /* RxReachability */; };
+		5C5B16DC29322A48000FF56D /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 5C5B16DB29322A48000FF56D /* RxBlocking */; };
+		5C5B16DE29322A4C000FF56D /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 5C5B16DD29322A4C000FF56D /* RxRelay */; };
+		5C5B16E029322A55000FF56D /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 5C5B16DF29322A55000FF56D /* Reachability */; };
+		5C5B16E229322AC0000FF56D /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 5C5B16E129322AC0000FF56D /* RxBlocking */; };
+		5C5B16E429322AC0000FF56D /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 5C5B16E329322AC0000FF56D /* RxRelay */; };
+		5C5B16E629322AC0000FF56D /* RxReachability in Frameworks */ = {isa = PBXBuildFile; productRef = 5C5B16E529322AC0000FF56D /* RxReachability */; };
 		5CD4B53629265363001516B9 /* BDSWISSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B53529265363001516B9 /* BDSWISSTests.swift */; };
 		5CD4B54029265363001516B9 /* BDSWISSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B53F29265363001516B9 /* BDSWISSUITests.swift */; };
 		5CD4B54229265363001516B9 /* BDSWISSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4B54129265363001516B9 /* BDSWISSUITestsLaunchTests.swift */; };
@@ -185,6 +196,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C5B16DE29322A4C000FF56D /* RxRelay in Frameworks */,
+				5C5B16E029322A55000FF56D /* Reachability in Frameworks */,
+				5C5B16D4293228F7000FF56D /* RxSwift in Frameworks */,
+				5C5B16DC29322A48000FF56D /* RxBlocking in Frameworks */,
+				5C5B16D2293228D2000FF56D /* RxCocoa in Frameworks */,
+				5C5B16DA29322A1A000FF56D /* RxReachability in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,9 +209,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C5B16E429322AC0000FF56D /* RxRelay in Frameworks */,
+				5C5B16D629322906000FF56D /* RxSwift in Frameworks */,
 				5CF07F1F292B9624002B02BD /* SwiftEntryKit in Frameworks */,
 				5CF07F21292B962C002B02BD /* NVActivityIndicatorView in Frameworks */,
+				5C5B16D82932290A000FF56D /* RxCocoa in Frameworks */,
 				5CF07F19292B9615002B02BD /* FlagKit in Frameworks */,
+				5C5B16E229322AC0000FF56D /* RxBlocking in Frameworks */,
+				5C5B16E629322AC0000FF56D /* RxReachability in Frameworks */,
 				5CF07F1D292B961D002B02BD /* Charts in Frameworks */,
 				5CF07F1B292B9619002B02BD /* Reachability in Frameworks */,
 			);
@@ -460,6 +482,14 @@
 				5CD4B53329265363001516B9 /* PBXTargetDependency */,
 			);
 			name = BDSWISSTests;
+			packageProductDependencies = (
+				5C5B16D1293228D2000FF56D /* RxCocoa */,
+				5C5B16D3293228F7000FF56D /* RxSwift */,
+				5C5B16D929322A1A000FF56D /* RxReachability */,
+				5C5B16DB29322A48000FF56D /* RxBlocking */,
+				5C5B16DD29322A4C000FF56D /* RxRelay */,
+				5C5B16DF29322A55000FF56D /* Reachability */,
+			);
 			productName = DBSWISSTests;
 			productReference = 5CD4B53129265363001516B9 /* BDSWISSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -484,6 +514,11 @@
 				5CF07F1C292B961D002B02BD /* Charts */,
 				5CF07F1E292B9624002B02BD /* SwiftEntryKit */,
 				5CF07F20292B962C002B02BD /* NVActivityIndicatorView */,
+				5C5B16D529322906000FF56D /* RxSwift */,
+				5C5B16D72932290A000FF56D /* RxCocoa */,
+				5C5B16E129322AC0000FF56D /* RxBlocking */,
+				5C5B16E329322AC0000FF56D /* RxRelay */,
+				5C5B16E529322AC0000FF56D /* RxReachability */,
 			);
 			productName = DBSWISSUITests;
 			productReference = 5CD4B53B29265363001516B9 /* BDSWISSUITests.xctest */;
@@ -1059,6 +1094,61 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		5C5B16B4292F9231000FF56D /* RxReachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C5B16B3292F9231000FF56D /* XCRemoteSwiftPackageReference "RxReachability" */;
+			productName = RxReachability;
+		};
+		5C5B16D1293228D2000FF56D /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CF3B7D4292E1D6800D3831C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		5C5B16D3293228F7000FF56D /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CF3B7D4292E1D6800D3831C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		5C5B16D529322906000FF56D /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CF3B7D4292E1D6800D3831C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		5C5B16D72932290A000FF56D /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CF3B7D4292E1D6800D3831C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		5C5B16D929322A1A000FF56D /* RxReachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C5B16B3292F9231000FF56D /* XCRemoteSwiftPackageReference "RxReachability" */;
+			productName = RxReachability;
+		};
+		5C5B16DB29322A48000FF56D /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CF3B7D4292E1D6800D3831C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		5C5B16DD29322A4C000FF56D /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CF3B7D4292E1D6800D3831C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		5C5B16DF29322A55000FF56D /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CD9D17D292A53ED001BD769 /* XCRemoteSwiftPackageReference "Reachability" */;
+			productName = Reachability;
+		};
+		5C5B16E129322AC0000FF56D /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CF3B7D4292E1D6800D3831C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		5C5B16E329322AC0000FF56D /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CF3B7D4292E1D6800D3831C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		5C5B16E529322AC0000FF56D /* RxReachability */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5C5B16B3292F9231000FF56D /* XCRemoteSwiftPackageReference "RxReachability" */;
 			productName = RxReachability;

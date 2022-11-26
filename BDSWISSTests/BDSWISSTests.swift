@@ -10,6 +10,10 @@ import Reachability
 import Charts
 import NVActivityIndicatorView
 import FlagKit
+import RxCocoaRuntime
+import RxSwift
+import RxCocoa
+import RxReachability
 
 @testable import BDSWISS
 
@@ -103,7 +107,7 @@ final class BDSWISSTests: XCTestCase {
     
     func testManagers() {
 
-        let dataManager = DataManager.sharedInstance
+        let dataManager = DataManager.shared
         XCTAssertNotNil(dataManager)
 
         let chartsDataManager = ChartsDataManager.shared
@@ -112,10 +116,10 @@ final class BDSWISSTests: XCTestCase {
         let notificationsManager = NotificationsManager.shared
         XCTAssertNotNil(notificationsManager)
 
-        let timeObserver = TimerObserver.sharedInstance
+        let timeObserver = TimerObserver.shared
         XCTAssertNotNil(timeObserver)
 
-        let connectionObserver = ConnectionObserver.sharedInstance
+        let connectionObserver = ConnectionObserver.shared
         XCTAssertNotNil(connectionObserver)
 
     }

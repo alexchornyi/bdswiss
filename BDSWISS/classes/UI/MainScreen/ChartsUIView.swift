@@ -26,6 +26,8 @@ struct ChartsView: UIViewRepresentable {
         lineChartsView.chartDescription.enabled = false
         lineChartsView.xAxis.enabled = false
         lineChartsView.data = ChartsDataManager.shared.getChartsData()
+        lineChartsView.accessibilityLabel = LineChartView.className
+        lineChartsView.accessibilityIdentifier = LineChartView.className
         return lineChartsView
     }
     

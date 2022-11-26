@@ -15,9 +15,9 @@ struct MainCell: View {
         static let text = 20.0
         static let textWidth = 100.0
     }
-    
+        
     let rate: Rate
-    @State var color = 2;
+    @State var color = Colors.black.rawValue;
     @State var iconText: String = iconUpDown
 
     
@@ -56,20 +56,20 @@ struct MainCell: View {
     
     func checkRate() {
         guard let symbol = rate.symbol, let oldValue = DataManager.shared.getOldRateFor(code: symbol) else {
-            color = 2
+            color = Colors.black.rawValue
             iconText = iconUpDown
             return
         }
         if rate.price > oldValue.price {
-            color = 0
+            color = Colors.green.rawValue
             iconText = iconUp
         }
         if rate.price < oldValue.price {
-            color = 1
+            color = Colors.red.rawValue
             iconText = iconDown
         }
         if rate.price == oldValue.price {
-            color = 2
+            color = Colors.black.rawValue
             iconText = iconUpDown
         }
     }
@@ -77,9 +77,9 @@ struct MainCell: View {
     func changeColor(color: Int) -> Color
     {
         switch color {
-        case 0:
+        case Colors.green.rawValue:
             return Color.green
-        case 1:
+        case Colors.red.rawValue:
             return Color.red
         default:
             return Color.black
